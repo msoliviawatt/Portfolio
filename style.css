@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow-x:hidden;
+    background-color: black;
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* logo header with name animation */
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+}
+
+/* when you hover over the logo header, it gets slightly bigger */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* links at the top */
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-top: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+nav a:hover,
+nav a.active {
+    color: #6928ff;
+    border-bottom: 3px solid #6928ff;
+}
+
+@media (max-width: 995px) {
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #6928ff;
+        border-bottom: 3px solid #6928ff;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #6928ff;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem 9%;
+    /* display: flex; */
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: #6928ff;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #6928ff;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #6928ff;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #6928ff;
+}
+
+.social-icons a:hover {
+    transform: scale(1.3 translateY(-0.5px));
+    background-color: #6928ff;
+    color: black;
+    box-shadow: 0 0 25px #6928ff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.5rem 2.8rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #6928ff;
+    background-color: black;
+    border: 2px solid #6928ff;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 0.3rem;
+}
+
+.btn:hover {
+    transform: scale3d(1.03);
+    background-color: #6928ff;
+    color: black;
+    box-shadow: 0 0 25px #6928ff;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #6928ff;
+    }
+}
+
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home.img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
