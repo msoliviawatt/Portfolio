@@ -71,7 +71,7 @@ nav.sidebar {
     z-index: 1000;
 }
 
-nav a {
+nav.sidebar a {
     font-size: 1.8rem;
     color: white;
     margin-top: 4rem;
@@ -83,8 +83,8 @@ nav a {
     align-items: center;
     justify-content: center;
 }
-nav a:hover,
-nav a.active {
+nav.sidebar a:hover,
+nav.sidebar a.active {
     background-color: rgba(105, 40, 255, 0.15);
     padding: 0.5rem;
     color: #6928ff;
@@ -303,4 +303,41 @@ span {
     color: #6928ff;
     transform: scale(1.05);
     /* box-shadow: 0 0 8px rgba(105, 40, 255, 0.3); */
+}
+
+/* projects */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    padding: 5rem 2rem;
+    color: white;
+    text-align: left;
+    min-height: 100vh;
+    margin-left: 4%;
+    margin-top: 0.4%;
+    flex: 1;
+
+    /* for debugging */
+    /* box-shadow: 0 0 8px rgba(105, 40, 255, 0.3); */
+}
+nav.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1.5rem;
+    background-color: black;
+    padding: 3rem 4rem;
+    border-radius: 1.5rem;
+}
+
+nav.projects a {
+    font-size: 2rem;
+    color: #00ffff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
 }
