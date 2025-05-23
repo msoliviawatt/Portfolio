@@ -450,6 +450,32 @@ nav.projects a {
         margin: 1rem auto;
         padding: 0 1rem;
     }
+
+    .footer-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+
+    .footer {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-icons a {
+        margin: 1rem 0.5rem;
+    }
+}
+
+
 }
 
 div.page-center {
@@ -460,9 +486,9 @@ div.page-center {
     margin: 2rem auto;
     padding: 0 1 rem;
     max-width: 800px;
-    /* margin-top: 2rem;
+    margin-top: 2rem;
     margin-right: 25rem;
-    margin-left: 25rem; */
+    margin-left: 25rem;
     /* box shadow for editing purposes */
     /* box-shadow: 0 0 8px rgb(101, 255, 247); */
 }
@@ -518,7 +544,7 @@ div.page-center {
     justify-content: center;
     align-items: left;
     margin-right: 25rem;
-    margin-left: 25em;
+    margin-left: 25rem;
 }
 
 .spacer {
