@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enable SSH on Raspberry Pi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel = "stylesheet" href = "../style.css">
+        <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="icon" href="../favicon/favicon.ico">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+</head>
+
+<body class = "rpws">
+    <!-- sidebar navigation -->
+    <header>
+        <a href = "#" class = "logo">How to Enable SSH on Raspberry Pi</a>
+        
+        <!-- # is placeholder link -->
+        <!-- navigation links -->
+        <nav class = "sidebar">
+            <a href = "../index.html"><i class = "fa-solid fa-house icon"></i>Home</a>
+            <a href = "../about/about.html"><i class = "fa-solid fa-user icon"></i>About</a>
+            <a href = "../projects/projects.html"><i class = "fa-solid fa-code icon"></i>Projects</a>
+            <a href = "../essays/essays.html"><i class = "fa-solid fa-pen-nib icon"></i>Essays</a>
+            <a href = "../contact/contact.html"><i class = "fa-solid fa-envelope icon"></i>Contact</a>
+            <a href = "../tutorials/tutorials.html"><i class = "fa-solid fa-lightbulb icon"></i>Tutorials</a>
+        </nav>
+
+    </header>
+
+    <p class = "tutorial-header">Make sure you have downloaded the Raspberry Pi OS from <a href = "https://www.raspberrypi.com/" class = "embedded-link">here</a></p>
+    <p class = "tutorial-header">Flash it to a micro SD card and set up your system (<a href = "https://www.raspberrypi.com/documentation/computers/getting-started.html" class = "embedded-link">Check the documentation</a> if you're unfamiliar)</p>
+
+    <div class = "page-center">
+        <p class = "instructions-text">1. Open a terminal on your Raspberry Pi</p>
+        <p class = "instructions-text">2. Run the following command.</p>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>sudo raspi-config</pre>
+        </div>
+        <p class = "instructions-text">3. Select "interface options".</p>
+        <p class = "instructions-text">4. Enable SSH</p>
+    </div>
+
+    <!-- i'm too lazy to think of a better way to add spaces between blocks. shush -->
+    <p>""</p>
+    <p>""</p>
+    <p>""</p>
+    <p>""</p>
+    <p class = "tutorial-header">Alternatively...</p>
+    <div class = "page-center">
+        <p class = "instructions-text">1. Open the start menu from your Raspberry Pi home screen interface</p>
+        <p class = "instructions-text">2. Select "Preferences".</p>
+        <p class = "instructions-text">3. Select "Raspberry Pi Configuation".</p>
+        <p class = "instructions-text">4. Select the "Interfaces" tab.</p>
+        <p class = "instructions-text">5. Select "Enable" next to SSH.</p>
+    </div>
+
+    <div class = "footer-center">
+        <hr style = "border-top: 1px solid white" class = "footer-hr">
+        <p class = "footer">Connect</p>
+        <div class = "social-icons">
+                <a href = "https://www.linkedin.com/in/msoliviawatt/" target = "_blank"><i class = "fa-brands fa-linkedin"></i></a>
+                <a href = "https://github.com/msoliviawatt" target = "_blank"><i class = "fa-brands fa-github"></i></a>
+                <a href = "https://www.instagram.com/msoliviawatt/" target = "_blank"><i class = "fa-brands fa-instagram"></i></a>
+                <a href = "https://www.youtube.com/@msoliviawatt" target = "_blank"><i class = "fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
