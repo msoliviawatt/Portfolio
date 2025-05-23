@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Server Setup With Raspberry Pi 5</title>
+    <title>Web Server Setup With Raspberry Pi 5 (WordPress Version)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel = "stylesheet" href = "../style.css">
         <!-- favicon -->
@@ -17,7 +17,7 @@
 <body class = "rpws">
     <!-- sidebar navigation -->
     <header>
-        <a href = "#" class = "logo">Web Server Setup With Raspberry Pi 5</a>
+        <a href = "#" class = "logo">Web Server Setup With Raspberry Pi 5 (WordPress Version)</a>
         
         <!-- # is placeholder link -->
         <!-- navigation links -->
@@ -34,6 +34,8 @@
 
     <p class = "tutorial-header">Make sure you have downloaded the Raspberry Pi OS from <a href = "https://www.raspberrypi.com/" class = "embedded-link">here</a></p>
     <p class = "tutorial-header">Flash it to a micro SD card and set up your system (<a href = "https://www.raspberrypi.com/documentation/computers/getting-started.html" class = "embedded-link">Check the documentation</a> if you're unfamiliar)</p>
+    <p class = "tutorial-header"><a href = "rp-web-server.html" style = "color: yellow;">Click here if you are NOT using WordPress</a></p>
+
 
     <div class = "page-center">
         <p class = "instructions-text">1. Open a terminal on your Raspberry Pi, or <a href = "rp-enable-ssh.html" class = "embedded-link">ssh into it from a separate computer</a></p>
@@ -71,6 +73,7 @@
         </div>
 
         <p class = "instructions-text">4. Create a database and user for your web server. Replace "your_database_name" with something like wordpress, and the other replacements are self-explanatory</p>
+
         <div class = "code-block">
             <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
             <pre>CREATE DATABASE your_database_name;</pre>
@@ -111,30 +114,20 @@
             <pre>define( 'DB_HOST', 'localhost' );</pre>
         </div>
 
-        <p class = "instructions-text">7. Install phpMyAdmin</p>
+        <p class = "instructions-text">7. Get your IP address</p>
         <div class = "code-block">
             <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
-            <pre>sudo apt install phpmyadmin</pre>
+            <pre>hostname -I</pre>
         </div>
-        <p class = "instructions-text">8. Select Apache2 when prompted</p>
-        <p class = "instructions-text">9. Select Yes when prompted to use dbconfig-common to set up the database</p>
-        <p class = "instructions-text">10. Enter the password you set for your database user</p>
-        <p class = "instructions-text">12. Enter the password you set for your database user again</p>
-        <p class = "instructions-text">13. Restart Apache2</p>
-        <div class = "code-block">
-            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
-            <pre>sudo systemctl restart apache2</pre>
-        </div>
-        <p class = "instructions-text">14. Open your web browser and go to http://localhost/phpmyadmin</p>
-        <p class = "instructions-text">15. Log in with the username and password you set for your database user</p>
-        <p class = "instructions-text">16. You can now create and manage databases for your web server</p>
-        
+        <p class = "instructions-text">8. Open your web browser and go to http:[your_IP_address]</p>
+        <p class = "instructions-text">9. Log in with the username and password you set for your database user</p>
+        <p class = "instructions-text">10. You can now create and manage databases for your web server!</p>
     </div>
 
 
     <div class = "footer-center">
         <hr style = "border-top: 1px solid white" class = "footer-hr">
-        <p class = "footer">Connect</p>
+        <p class = "footer">Connect with Olivia Watt</p>
         <div class = "social-icons">
                 <a href = "https://www.linkedin.com/in/msoliviawatt/" target = "_blank"><i class = "fa-brands fa-linkedin"></i></a>
                 <a href = "https://github.com/msoliviawatt" target = "_blank"><i class = "fa-brands fa-github"></i></a>

@@ -297,7 +297,7 @@ span {
     text-align: left;
     min-height: 100vh;
     margin-left: 4%;
-    margin-top: 0.4%;
+    /* margin-top: 0.4%; */
     flex: 1;
 }
 
@@ -324,7 +324,7 @@ span {
 
 .tutorials nav a:hover {
     background-color: black;
-    color: #6928ff;
+    color: white;
     transform: scale(1.05);
     /* box-shadow: 0 0 8px rgba(105, 40, 255, 0.3); */
 }
@@ -493,4 +493,10 @@ div.page-center {
     align-items: left;
     margin-right: 25rem;
     margin-left: 25em;
+}
+
+.spacer {
+    flex-shrink: 0;
+    display: block;
+    height: 5rem;
 }

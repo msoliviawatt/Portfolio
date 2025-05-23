@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enable SSH on Raspberry Pi</title>
+    <title>Web Server Setup With Raspberry Pi 5 (Custom Version)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel = "stylesheet" href = "../style.css">
         <!-- favicon -->
@@ -17,7 +17,7 @@
 <body class = "rpws">
     <!-- sidebar navigation -->
     <header>
-        <a href = "#" class = "logo">How to Enable SSH on Raspberry Pi</a>
+        <a href = "#" class = "logo">Web Server Setup With Raspberry Pi 5 (Custom Version)</a>
         
         <!-- # is placeholder link -->
         <!-- navigation links -->
@@ -34,43 +34,59 @@
 
     <p class = "tutorial-header">Make sure you have downloaded the Raspberry Pi OS from <a href = "https://www.raspberrypi.com/" class = "embedded-link">here</a></p>
     <p class = "tutorial-header">Flash it to a micro SD card and set up your system (<a href = "https://www.raspberrypi.com/documentation/computers/getting-started.html" class = "embedded-link">Check the documentation</a> if you're unfamiliar)</p>
+    <p class = "tutorial-header"><a href = "rp-web-server.html" style = "color: yellow;">Click here if you are using WordPress</a></p>
+
 
     <div class = "page-center">
-        <p class = "instructions-text">1. Open a terminal on your Raspberry Pi</p>
-        <p class = "instructions-text">2. Run the following command.</p>
+        <p class = "instructions-text">1. Open a terminal on your Raspberry Pi, or <a href = "rp-enable-ssh.html" class = "embedded-link">ssh into it from a separate computer</a></p>
+        <p class = "instructions-text">2. Run the following commands in the order shown</p>
         <div class = "code-block">
             <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
-            <pre>sudo raspi-config</pre>
+            <!-- pre = formatted code-block text -->
+            <pre>sudo apt update</pre>
+            <pre>sudo apt upgrade -y</pre>
+            <pre>sudo apt full-upgrade</pre>
         </div>
-        <p class = "instructions-text">3. Select "interface options".</p>
-        <p class = "instructions-text">4. Enable SSH</p>
-    </div>
-
-    <!-- i'm too lazy to think of a better way to add spaces between blocks. shush -->
-    
-    <div class = "spacer"></div>
-
-
-    <p class = "tutorial-header">Alternatively...</p>
-    <div class = "page-center">
-        <p class = "instructions-text">1. Open the start menu from your Raspberry Pi home screen interface</p>
-        <p class = "instructions-text">2. Select "Preferences".</p>
-        <p class = "instructions-text">3. Select "Raspberry Pi Configuation".</p>
-        <p class = "instructions-text">4. Select the "Interfaces" tab.</p>
-        <p class = "instructions-text">5. Select "Enable" next to SSH.</p>
-    </div>
-
-    <div class = "spacer"></div>
-
-    <p class = "tutorial-header">Then to connect via SSH from a different computer...</p>
-    <div class = "page-center">
-        <p class = "instructions-text">1. Open a terminal on your computer</p>
-        <p class = "instructions-text">2. Run the following command.</p>
+        <p class = "instructions-text">3. Install the LAMP stack (Linux, Apache, MariaDB, PHP)</p>
         <div class = "code-block">
             <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
-            <pre>ssh [your_username]@[ip_address]</pre>
+            <pre>sudo apt install apache2 mariadb-server php php-mysql libapache2-mod-php php-cli php-curl php-gd php-xml php-mbstring unzip</pre>
         </div>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>sudo systemctl enable apache2</pre>
+        </div>
+
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>sudo systemctl start apache2</pre>
+        </div>
+
+        <p class = "instructions-text">4. Make sure your files are in a GitHub repository</p>
+
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>cd ~</pre>
+            <pre>git clone https://github.com/your_username/your_repository.git</pre>
+            <pre>sudo rm -rf /var/www/html/*</pre>
+            <pre>sudo cp -r ~/your-repo/* /var/www/html/</pre>
+        </div>
+
+        <p class = "instructions-text">7. File permissions</p>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>sudo chown -R www-data:www-data /var/www/html</pre>
+            <pre>sudo chmod -R 755 /var/www/html</pre>
+        </div>
+
+        <p class = "instructions-text">7. Get your IP address</p>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>hostname -I</pre>
+        </div>
+        <p class = "instructions-text">8. Open your web browser and go to http:[your_IP_address]</p>
     </div>
+
 
     <div class = "footer-center">
         <hr style = "border-top: 1px solid white" class = "footer-hr">
@@ -82,7 +98,6 @@
                 <a href = "https://www.youtube.com/@msoliviawatt" target = "_blank"><i class = "fa-brands fa-youtube"></i></a>
         </div>
     </div>
-
 
 
 </body>
