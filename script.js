@@ -1,5 +1,5 @@
 function copyToClipboard(button) {
-    const code = button.nextElementSibing.innerText;
+    const code = button.nextElementSibling.innerText;
     const icon = button.querySelector("i");
 
     navigator.clipboard.writeText(code).then(() => {
@@ -10,4 +10,9 @@ function copyToClipboard(button) {
             icon.classList.add("fa-copy");
         }, 2000);
     });
+}
+
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("active");
 }
