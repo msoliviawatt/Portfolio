@@ -446,11 +446,6 @@ nav.projects a {
         font-size: 0.9rem;
     }
 
-    div.page-center {
-        margin: 1rem auto;
-        padding: 0 1rem;
-    }
-
     .footer-center {
     display: flex;
     flex-direction: column;
@@ -473,6 +468,18 @@ nav.projects a {
     .social-icons a {
         margin: 1rem 0.5rem;
     }
+}
+
+@media (max-width: 768px) {
+  div.page-center {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    align-items: flex-start; /* keeps content left-aligned inside */
+  }
 }
 
 
