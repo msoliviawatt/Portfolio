@@ -431,6 +431,19 @@ nav.projects a {
     opacity: 1;
 }
 
+@media (mad-width: 600px) {
+    .code-block {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    .code-block pre {
+        white-space: pre;
+        overflow-x: auto;
+        font-size: 0.9rem;
+    }
+}
+
 div.page-center {
     display: flex;
     flex-direction: column;
