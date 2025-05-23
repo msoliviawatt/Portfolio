@@ -12,11 +12,14 @@
 }
 
 html {
+    width: 100%;
+    box-sizing: border-box;
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
 body {
+    box-sizing: border-box;
     width: 100%;
     height: 100vh;
     overflow-x:hidden;
@@ -431,7 +434,7 @@ nav.projects a {
     opacity: 1;
 }
 
-@media (mad-width: 600px) {
+@media (max-width: 600px) {
     .code-block {
         font-size: 0.9rem;
         padding: 0.75rem;
@@ -442,6 +445,11 @@ nav.projects a {
         overflow-x: auto;
         font-size: 0.9rem;
     }
+
+    div.page-center {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
 }
 
 div.page-center {
@@ -449,9 +457,12 @@ div.page-center {
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    padding: 0 1 rem;
+    max-width: 800px;
+    /* margin-top: 2rem;
     margin-right: 25rem;
-    margin-left: 25em;
+    margin-left: 25rem; */
     /* box shadow for editing purposes */
     /* box-shadow: 0 0 8px rgb(101, 255, 247); */
 }
