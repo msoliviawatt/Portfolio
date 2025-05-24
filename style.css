@@ -19,6 +19,10 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
@@ -40,6 +44,10 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+
+.page-wrapper {
+    flex: 1;
 }
 
 /* logo header with name animation */
@@ -98,6 +106,7 @@ nav.sidebar a.active {
     color: #6928ff;
     transform: scale(1.05);
     box-shadow: 0 0 8px rgba(105, 40, 255, 0.3);
+    border-bottom: 0.5rem solid #6928ff;
 }
 
 @media (max-width: 995px) {
@@ -110,7 +119,6 @@ nav.sidebar a.active {
         padding: 1rem;
 
     }
-
 
     nav.sidebar a {
         font-size: 1.5rem;
@@ -146,7 +154,6 @@ nav.sidebar a.active {
     nav a.active {
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #6928ff;
     }
 }
 
@@ -160,8 +167,13 @@ section.home {
     /* display: flex; */
 }
 
-section.tutorials {
-    margin-top: 5%;
+.tutorials {
+    margin-top: 8rem;
+    padding: 2rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 800px;
 }
 
 .home {
@@ -294,32 +306,26 @@ span {
 }
 
 /* tutorials page */
-section.tutorials {
+.tutorials {
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: left;
-    padding: 2rem 2rem;
+    /* padding: 2rem 2rem; */
     color: white;
     text-align: left;
     /* min-height: 100vh; */
     margin-left: 4%;
     /* margin-top: 0.4%; */
     flex: 1;
-}
-
-.tutorials nav {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
     gap: 1rem;
     background-color: black;
     padding: 1rem 15rem 1rem;
     border-radius: 1.5rem;
-    /* box-shadow: 0 0 25px rgba(105, 40, 255, 0.3); */
+    box-shadow: 0 0 25px rgba(105, 40, 255, 0.3);
 }
 
-.tutorials nav a {
+.tutorials a {
     font-size: 2rem;
     color: #00ffff;
     font-weight: 500;
@@ -329,7 +335,7 @@ section.tutorials {
     border-radius: 1rem;
 }
 
-.tutorials nav a:hover {
+.tutorials a:hover {
     background-color: black;
     color: white;
     transform: scale(1.05);
@@ -439,7 +445,7 @@ nav.projects a {
     opacity: 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 995px) {
     .code-block {
         font-size: 0.9rem;
         padding: 0.75rem;
@@ -450,64 +456,53 @@ nav.projects a {
         overflow-x: auto;
         font-size: 0.9rem;
     }
+    
+    div.page-center {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        align-items: flex-start;
+    }
+
+    .tutorials {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
 
     .footer-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    padding: 1rem;
-    text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 4rem auto 2 rem;
+        width: 100%;
+        max-width: 800px;
+        padding: 1rem;
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .footer hr {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
 
     .footer {
         font-size: 2rem;
     }
 
     .social-icons {
-        flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
-    }
-
-    .social-icons a {
-        margin: 1rem 0.5rem;
+        flex-wrap: wrap;
     }
 }
 
-@media (max-width: 768px) {
-  div.page-center {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1.5rem;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    align-items: flex-start;
-  }
-
-  section.tutorials {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: auto;
-    margin-top: 1rem;
-    padding: 2rem;
-  }
-
-  section.tutorial-header {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .tutorials nav {
-    padding: 1.5rem;
-  }
-}
 
 
-}
 
 div.page-center {
     display: flex;
@@ -526,6 +521,14 @@ div.page-center {
 
 /* raspberry pi web server */
 .rpws {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    padding: 10rem 10rem;
+}
+
+.temp {
     display: flex;
     flex-direction: column;
     align-items: left;
