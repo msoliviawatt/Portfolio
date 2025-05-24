@@ -154,15 +154,14 @@ ul {
     list-style: none;
 }
 
-section {
-    /* min-height: 100vh; */
+section.home {
+    min-height: 100vh;
     padding: 5rem 9% 5rem 9%;
     /* display: flex; */
 }
 
 section.tutorials {
     margin-top: 5%;
-
 }
 
 .home {
@@ -300,10 +299,10 @@ section.tutorials {
     flex-direction: column;
     align-items: left;
     justify-content: left;
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
     color: white;
     text-align: left;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     margin-left: 4%;
     /* margin-top: 0.4%; */
     flex: 1;
@@ -313,9 +312,9 @@ section.tutorials {
     display: flex;
     flex-direction: column;
     align-items: left;
-    gap: 1.5rem;
+    gap: 1rem;
     background-color: black;
-    padding: 3rem 4rem;
+    padding: 1rem 15rem 1rem;
     border-radius: 1.5rem;
     /* box-shadow: 0 0 25px rgba(105, 40, 255, 0.3); */
 }
