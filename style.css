@@ -155,9 +155,14 @@ ul {
 }
 
 section {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding: 5rem 9% 5rem 9%;
     /* display: flex; */
+}
+
+section.tutorials {
+    margin-top: 5%;
+
 }
 
 .home {
@@ -290,7 +295,7 @@ span {
 }
 
 /* tutorials page */
-.tutorials {
+section.tutorials {
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -331,6 +336,7 @@ span {
     transform: scale(1.05);
     /* box-shadow: 0 0 8px rgba(105, 40, 255, 0.3); */
 }
+
 
 /* projects */
 .projects {
@@ -478,7 +484,26 @@ nav.projects a {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    align-items: flex-start; /* keeps content left-aligned inside */
+    align-items: flex-start;
+  }
+
+  section.tutorials {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: auto;
+    margin-top: 1rem;
+    padding: 2rem;
+  }
+
+  section.tutorial-header {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .tutorials nav {
+    padding: 1.5rem;
   }
 }
 
