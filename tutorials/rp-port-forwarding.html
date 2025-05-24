@@ -3,9 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Port Forwarding and DNS Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel = "stylesheet" href = "../style.css">
+        <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="icon" href="../favicon/favicon.ico">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 </head>
-<body>
-    coming soon
+
+<script src = "../script.js"></script>
+
+<body class = "rpws">
+    <!-- sidebar navigation -->
+    <header>
+        <button class = "hamburger" onclick = "toggleSidebar()">
+            <i class = "fa-solid fa-bars"></i>
+        </button>
+        <a href = "#" class = "logo">Port Forwarding and DNS Management</a>
+        
+        <!-- # is placeholder link -->
+        <!-- navigation links -->
+        <nav class = "sidebar">
+            <a href = "../index.html"><i class = "fa-solid fa-house icon"></i>Home</a>
+            <a href = "../about/about.html"><i class = "fa-solid fa-user icon"></i>About</a>
+            <a href = "../projects/projects.html"><i class = "fa-solid fa-code icon"></i>Projects</a>
+            <a href = "../essays/essays.html"><i class = "fa-solid fa-pen-nib icon"></i>Essays</a>
+            <a href = "../contact/contact.html"><i class = "fa-solid fa-envelope icon"></i>Contact</a>
+            <a href = "../tutorials/tutorials.html"><i class = "fa-solid fa-lightbulb icon"></i>Tutorials</a>
+        </nav>
+
+    </header>
+
+    <p class = "tutorial-header">This tutorial assumes you have a web server running on your local network.</p>
+
+    <div class = "page-center">
+        <p class = "instructions-text">1. Open a terminal on your Raspberry Pi, or <a href = "rp-enable-ssh.html" class = "embedded-link">ssh into it from a separate computer</a></p>
+        
+        <p class = "instructions-text">2. Run the following to get your <a style = "color: #6928ff">public</a> IP address</p>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>curl ifconfig.me</pre>
+        </div>
+
+        <p class = "instructions-text">3. Run the following to get your <a style = "color: #6928ff">local</a> IP address</p>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>hostname -I</pre>
+        </div>
+
+        <p class = "instructions-text">4. Open a web browser and search <a style = "color: #00ffff;">http://[ip_address]</a>, using the PUBLIC IP address you got in step 2</p>
+
+        <p class = "instructions-text">5. You should arrive at your router's setting page (Alternatively, you can follow the instructions on the
+            physical router to access this same page)
+        </p>
+        <p class = "instructions-text">5. Navigate to the port forwarding section</p>
+        <p class = "instructions-text">6. You will add two new port forwarding rules</p>
+        <p class = "instructions-text">8. Set up forwarding from your device's <a style = "color: #6928ff">local</a> IP address to HTTP (80) and HTTPS (443)</p>
+        <p class = "instructions-text">9. Save the changes</p>
+        <p class = "instructions-text">10. Navigate to the site where your domain is registered</p>
+        <p class = "instructions-text">11. Edit DNS records: Remove existing A records and add the following</p>
+
+        <table class="dns-table">
+        <thead>
+            <tr>
+            <th>Type</th>
+            <th>Host</th>
+            <th>Answer</th>
+            <th>TTL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>A</td>
+            <td>@</td>
+            <td><code>[your_local_ip]</code></td>
+            <td>Auto</td>
+            </tr>
+            <tr>
+            <td>A</td>
+            <td>www</td>
+            <td><code>[your_local_ip]</code></td>
+            <td>Auto</td>
+            </tr>
+        </tbody>
+        </table>
+
+        <p class = "instructions-text">12. Use <a href = "https://dnschecker.org/#A/" class = "embedded-link">This website</a> to check on your domain name's status after saving the changes</p>
+        <p class = "instructions-text">13. Once everything is green, you can go ahead and get an ssl certificate for HTTPS</p>
+        <p class = "instructions-text">14. Install Certbot</p>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>sudo apt install certbot python3-certbot-apache -y</pre>
+        </div>
+        
+        <p class = "instructions-text">15. Get an ssl certificate for your domain</p>
+        <div class = "code-block">
+            <button class = "copy-button" onclick = "copyToClipboard(this)"><i class = "fa-regular fa-copy"></i></button>
+            <pre>sudo certbot --apache -d [your_domain] -d www.[your_domain]</pre>
+        </div>
+        <p class = "instructions-text">Obviously, do not include the brackets</p>
+        <p class = "instructions-text">16. You should get a message along the lines of "Successfully deployed certificate for [your_domain]"</p>
+        <p class = "instructions-text">17. In that case, good job. You can now access your website from your custom domain!</p>
+
+
+
+    </div>
+
+    
+
+    <div class = "footer-center">
+        <hr style = "border-top: 1px solid white" class = "footer-hr">
+        <p class = "footer">Connect with Olivia Watt</p>
+        <div class = "social-icons">
+                <a href = "https://www.linkedin.com/in/msoliviawatt/" target = "_blank"><i class = "fa-brands fa-linkedin"></i></a>
+                <a href = "https://github.com/msoliviawatt" target = "_blank"><i class = "fa-brands fa-github"></i></a>
+                <a href = "https://www.instagram.com/msoliviawatt/" target = "_blank"><i class = "fa-brands fa-instagram"></i></a>
+                <a href = "https://www.youtube.com/@msoliviawatt" target = "_blank"><i class = "fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+
+
+
 </body>
 </html>

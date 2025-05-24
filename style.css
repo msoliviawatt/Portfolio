@@ -605,3 +605,36 @@ div.page-center {
     display: flex;
   }
 }
+
+/* instructions table */
+.dns-table {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  color: white;
+  background-color: #0d001c;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  border: 1px solid #2a2a2a;
+}
+
+.dns-table th,
+.dns-table td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.dns-table th {
+  font-weight: 700;
+  background-color: #0d001c;
+}
+
+.dns-table code {
+  background-color: #210346;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-family: monospace;
+  color: #ddd;
+}
